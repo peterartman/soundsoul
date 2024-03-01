@@ -1,13 +1,16 @@
 package com.finalyearproject.soundsoul.auth
 
 import android.content.Intent
+import android.util.Log
+
 import com.adamratzman.spotify.SpotifyImplicitGrantApi
 import com.adamratzman.spotify.SpotifyScope
 import com.adamratzman.spotify.auth.implicit.AbstractSpotifyAppImplicitLoginActivity
-import com.adamratzman.spotifyandroidexample.BuildConfig
-import com.adamratzman.spotifyandroidexample.SpotifyPlaygroundApplication
-import com.adamratzman.spotifyandroidexample.activities.ActionHomeActivity
-import com.adamratzman.spotifyandroidexample.toast
+import com.finalyearproject.soundsoul.BuildConfig
+
+import com.finalyearproject.soundsoul.SpotifyPlaygroundApplication
+import com.finalyearproject.soundsoul.activities.ActionHomeActivity
+import com.finalyearproject.soundsoul.utils.toast
 
 class SpotifyImplicitLoginActivityImpl : AbstractSpotifyAppImplicitLoginActivity() {
     override val state: Int = 1337
@@ -25,5 +28,6 @@ class SpotifyImplicitLoginActivityImpl : AbstractSpotifyAppImplicitLoginActivity
 
     override fun onFailure(errorMessage: String) {
         toast("Auth failed: $errorMessage")
+        Log.e("LoginError", errorMessage)
     }
 }

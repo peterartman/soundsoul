@@ -1,4 +1,4 @@
-package com.adamratzman.spotifyandroidexample.auth
+package com.finalyearproject.soundsoul.auth
 
 import android.app.Activity
 import com.adamratzman.spotify.SpotifyClientApi
@@ -6,7 +6,7 @@ import com.adamratzman.spotify.SpotifyException
 import com.adamratzman.spotify.auth.SpotifyDefaultCredentialStore
 import com.adamratzman.spotify.auth.implicit.startSpotifyImplicitLoginActivity
 import com.adamratzman.spotify.auth.pkce.startSpotifyClientPkceLoginActivity
-import com.adamratzman.spotifyandroidexample.data.Model
+import com.finalyearproject.soundsoul.data.Model
 import kotlinx.coroutines.runBlocking
 
 fun <T> Activity.guardValidSpotifyApi(

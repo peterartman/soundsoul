@@ -1,14 +1,15 @@
-package com.adamratzman.spotifyandroidexample.auth
+package com.finalyearproject.soundsoul.auth
 
 import android.app.Activity
 import android.content.Intent
+import android.util.Log
 import com.adamratzman.spotify.SpotifyClientApi
 import com.adamratzman.spotify.SpotifyScope
 import com.adamratzman.spotify.auth.pkce.AbstractSpotifyPkceLoginActivity
-import com.adamratzman.spotifyandroidexample.BuildConfig
-import com.adamratzman.spotifyandroidexample.SpotifyPlaygroundApplication
-import com.adamratzman.spotifyandroidexample.activities.ActionHomeActivity
-import com.adamratzman.spotifyandroidexample.toast
+import com.finalyearproject.soundsoul.BuildConfig
+import com.finalyearproject.soundsoul.SpotifyPlaygroundApplication
+import com.finalyearproject.soundsoul.activities.ActionHomeActivity
+import com.finalyearproject.soundsoul.utils.toast
 
 internal var pkceClassBackTo: Class<out Activity>? = null
 
@@ -30,5 +31,6 @@ class SpotifyPkceLoginActivityImpl : AbstractSpotifyPkceLoginActivity() {
         exception.printStackTrace()
         pkceClassBackTo = null
         toast("Auth failed: ${exception.message}")
+        Log.e(" LoginError", exception.message.toString())
     }
 }
